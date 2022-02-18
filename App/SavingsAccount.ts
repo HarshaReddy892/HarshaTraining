@@ -2,6 +2,7 @@ import { Account } from "./Account";
 import { Accountype } from "./Enum.AccountType";
 import { IAccount } from "./IAccount";
 
+
 export class SavingsAccount extends Account{
     
     constructor()
