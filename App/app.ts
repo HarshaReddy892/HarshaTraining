@@ -11,18 +11,19 @@ WelcomNote();
 
 export function WelcomNote()
 {
-    console.log('\x1b[33m%s\x1b[0m',"Dear Customer, Welcome to Our Bank!");
-    console.log('\x1b[33m%s\x1b[0m',"Below are the services providing at our desk!");
+    console.log("...........Dear Customer, Welcome to Our Bank!.............");
+    console.log("Below are the services providing at our desk!");
     MainMenuOptions();
 }
 
 
 export function MainMenuOptions()
 {
-    console.log('\x1b[36m%s\x1b[0m',"New Account  -N  Account Details - D");
-    console.log('\x1b[36m%s\x1b[0m',"View Balnace -B  Transaction     - T");
-    console.log('\x1b[36m%s\x1b[0m',"Exit - X");
+    console.log("View Balnace -B  Transaction     - T");
+    console.log("New Account  -N  Account Details - D");
+    console.log("Exit - x")
     startApp();
+    
 }
 
 
@@ -32,22 +33,22 @@ export function startApp()
 
     if(mainMenu=='N')
     {
-        console.log('\x1b[34m%s\x1b[0m',"New Account Creation");
+        console.log("New Account Creation");
         NewAccount();
     }
     else if(mainMenu=='D')
     {
-        console.log('\x1b[34m%s\x1b[0m',"Account details!");
+        console.log("Account details!");
         DisplayDetails();
     }
     else if(mainMenu=='B')
     {
-        console.log('\x1b[34m%s\x1b[0m',"View Balance");
+        console.log("View Balance");
         ShowBalance();
     }
     else if(mainMenu=='T')
     {
-        console.log('\x1b[34m%s\x1b[0m',"Transaction");
+        console.log("Transaction");
         Transaction();
     }
     else if(mainMenu=='X')
@@ -55,14 +56,14 @@ export function startApp()
         
     }
     else{
-        console.log('\x1b[31m%s\x1b[0m',"Invalid Input. Please try again!");
+        console.log("Invalid Input. Please try again!");
         MainMenuOptions();
     }
 }
 
 export function BackOptons()
 {
-    console.log('\x1b[36m%s\x1b[0m',"Retry - R  Back - B");
+    console.log("Retry - R  Back - B");
     var selected:string=question("Please type your answer(Type the letter specified after ur option):\n").toUpperCase();
     if(selected=="R")
     {
@@ -72,18 +73,18 @@ export function BackOptons()
         back= true
     }
     else{
-        console.log('\x1b[31m%s\x1b[0m',"Invalid Input. Try again!");
+        console.log("Invalid Input. Try again!");
         BackOptons()
     }
 }
 
 export function accountTypeOptions()
 {
-    console.log('\x1b[36m%s\x1b[0m',"Savings Account - S  Current Account - C");
+    console.log("Savings Account - S  Current Account - C");
 }
 export function transactionTypeOptions()
 {
-    console.log('\x1b[36m%s\x1b[0m',"Deposit - D  Withdraw - W");
+    console.log("Deposit - D  Withdraw - W");
 }
 export function NewAccount()
 {
@@ -96,7 +97,7 @@ export function NewAccount()
       newsavingsAccount.age = Number(question("Enter your Age:"));
       if(newsavingsAccount.age>68)
       {
-          console.log('\x1b[31m%s\x1b[0m',"As your age is greater than 68, You are not eligible to create account.");
+          console.log("As your age is greater than 68, You are not eligible to create account.");
           MainMenuOptions();
       }
       else
@@ -106,7 +107,7 @@ export function NewAccount()
         newsavingsAccount.country=question('Enter Your Country: ');        
         GetEmailID(); 
         newsavingsAccount.emailID=EmailIDG;        
-        console.log('\x1b[32m%s\x1b[0m','Savings Account Created Succesfully with Account Number :'+newsavingsAccount.accountNumber);
+        console.log('Savings Account Created Succesfully with Account Number :'+newsavingsAccount.accountNumber);
         Accountdetails=newsavingsAccount;
         //console.log(Accountdetails);
 
@@ -121,7 +122,7 @@ export function NewAccount()
         newcurrentccount.age = Number(question("Enter your Age:"));
       if(newcurrentccount.age>68)
       {
-          console.log('\x1b[31m%s\x1b[0m',"As your age is greater than 68, You are not eligible to create account.");
+          console.log("As your age is greater than 68, You are not eligible to create account.");
           MainMenuOptions();
       }
       else
@@ -131,7 +132,7 @@ export function NewAccount()
         newcurrentccount.country=question('Enter Your Country: ');
         GetEmailID(); 
         newcurrentccount.emailID=EmailIDG;        
-        console.log('\x1b[32m%s\x1b[0m','Current Account Created Succesfully with Account Number :'+newcurrentccount.accountNumber);
+        console.log('Current Account Created Succesfully with Account Number :'+newcurrentccount.accountNumber);
         Accountdetails=newcurrentccount;
         //console.log(Accountdetails);
 
@@ -140,7 +141,7 @@ export function NewAccount()
 
     }
     else{
-        console.log('\x1b[31m%s\x1b[0m',"Invalid input. Try again!")
+        console.log("Invalid input. Try again!")
         NewAccount();
     }
 }
@@ -150,7 +151,7 @@ export function GetEmailID():void
    var email:string = question('Enter Your EmailID: ');
    if(!validateEmail(email))
    {
-       console.log('\x1b[31m%s\x1b[0m',"Invalid Email!");
+       console.log("Invalid Email!");
        GetEmailID();
    } 
    else{
@@ -174,7 +175,7 @@ export function DisplayDetails():void
 {
     if(Accountdetails.accountNumber=="")
     {
-        console.log('\x1b[31m%s\x1b[0m',"No data found! Please an create Account.");
+        console.log("No data found! Please an create Account.");
         MainMenuOptions();
     }
     else{
@@ -182,17 +183,17 @@ export function DisplayDetails():void
         if(accno==Accountdetails.accountNumber)
         {
             //console.log(Accountdetails);
-            console.log('\x1b[33m%s\x1b[0m',"Account Number:",Accountdetails.accountNumber);
-            console.log('\x1b[33m%s\x1b[0m',"Account Type:",Accountdetails.accountType);
-            console.log('\x1b[33m%s\x1b[0m',"Customer Name:",Accountdetails.name);
-            console.log('\x1b[33m%s\x1b[0m',"Address:",Accountdetails.location+","+Accountdetails.state+","+Accountdetails.country);
-            console.log('\x1b[33m%s\x1b[0m',"EmailID:",Accountdetails.emailID);
-            console.log('\x1b[33m%s\x1b[0m',"Total Balance:",Accountdetails.balance);
+            console.log("Account Number:",Accountdetails.accountNumber);
+            console.log("Account Type:",Accountdetails.accountType);
+            console.log("Customer Name:",Accountdetails.name);
+            console.log("mAddress:",Accountdetails.location+","+Accountdetails.state+","+Accountdetails.country);
+            console.log("EmailID:",Accountdetails.emailID);
+            console.log("Total Balance:",Accountdetails.balance);
 
             MainMenuOptions();
         }
         else{
-            console.log('\x1b[31m%s\x1b[0m',"In correct Account Number !");
+            console.log("In correct Account Number !");
             BackOptons();
             var retry:boolean = !back;
             if(retry)
@@ -207,18 +208,18 @@ export function ShowBalance()
 {
     if(Accountdetails.accountNumber=="")
     {
-        console.log('\x1b[31m%s\x1b[0m',"No data found! Please create an Account.");
+        console.log("No data found! Please create an Account.");
         MainMenuOptions();
     }
     else{
         var tmpname:string = question("Please enter the Account Holder Name:");
         if(tmpname==Accountdetails.name)
         {
-            console.log('\x1b[33m%s\x1b[0m',"Account Balance: "+Accountdetails.balance);
+            console.log("Account Balance: "+Accountdetails.balance);
             MainMenuOptions();
         }
         else{
-            console.log('\x1b[31m%s\x1b[0m',"In correct Account Holder Name !");
+            console.log("In correct Account Holder Name !");
             BackOptons();
             var retry:boolean = !back;
             if(retry)
@@ -232,7 +233,7 @@ export function Transaction()
 {
     if(Accountdetails.accountNumber=="")
     {
-        console.log('\x1b[31m%s\x1b[0m',"No data found! Please create an Account.");
+        console.log("No data found! Please create an Account.");
         MainMenuOptions();
     }
     else{
@@ -246,7 +247,7 @@ export function Transaction()
             Withdraw();
         }
         else{
-            console.log('\x1b[31m%s\x1b[0m',"Invalid Input!");
+            console.log("Invalid Input!");
             Transaction();
         }
     
@@ -258,15 +259,15 @@ export function Deposit()
     var accno:string = question("Please enter the Account Number:");
     if(accno==Accountdetails.accountNumber)
     {
-        console.log('\x1b[33m%s\x1b[0m',"Account Balance: "+ Accountdetails.balance);
+        console.log("Account Balance: "+ Accountdetails.balance);
         var amountdepositing:number = Number(question("Please Enter the Amount to be deposited: "));
         Accountdetails.balance+=amountdepositing;
-        console.log('\x1b[32m%s\x1b[0m',"Deposit of "+amountdepositing+" is Successfull!")
-        console.log('\x1b[33m%s\x1b[0m',"Available Balance: "+ Accountdetails.balance); 
+        console.log("Deposit of "+amountdepositing+" is Successfull!")
+        console.log("Available Balance: "+ Accountdetails.balance); 
         MainMenuOptions();              
     }
     else{
-        console.log('\x1b[31m%s\x1b[0m',"In correct Account Number !");
+        console.log("In correct Account Number !");
         BackOptons();
         var retry:boolean = !back;
         if(retry)
@@ -280,19 +281,19 @@ export function Withdraw()
     var accno:string = question("Please enter the Account Number:");
     if(accno==Accountdetails.accountNumber)
     {
-        console.log('\x1b[33m%s\x1b[0m',"Account Balance: "+ Accountdetails.balance);        
+        console.log("Account Balance: "+ Accountdetails.balance);        
         if(Accountdetails.balance>Accountdetails.minimumBalance)
         {
-            console.log('\x1b[33m%s\x1b[0m',"Withdrawble Balance: "+ (Accountdetails.balance-Accountdetails.minimumBalance));
+            console.log("Withdrawble Balance: "+ (Accountdetails.balance-Accountdetails.minimumBalance));
             WithdrawAmount();                                     
         }
         else{
-            console.log('\x1b[31m%s\x1b[0m',"Not Eligible to withdraw as balance is less than Minimum balance");
+            console.log("Not Eligible to withdraw as balance is less than Minimum balance");
             MainMenuOptions();
         }             
     }
     else{
-        console.log('\x1b[31m%s\x1b[0m',"In correct Account Number !");
+        console.log("In correct Account Number !");
         BackOptons();
         var retry:boolean = !back;
         if(retry)
@@ -307,7 +308,7 @@ export function WithdrawAmount():void
    var amountwithdrawing:number = Number(question("Please Enter the Amount to be withdraw: "));
    if(!validateWithdrawAmount(amountwithdrawing))
    {
-        console.log('\x1b[31m%s\x1b[0m',"Insufficient Amount! please enter the amount less than withdrawable amount ");       
+        console.log("Insufficient Amount! please enter the amount less than withdrawable amount ");       
         BackOptons();
         var retry:boolean = !back;
         if(retry)
@@ -317,8 +318,8 @@ export function WithdrawAmount():void
    } 
    else{
         Accountdetails.balance-=amountwithdrawing;
-        console.log('\x1b[32m%s\x1b[0m',"Withdrawal of "+amountwithdrawing+" is Successfull!")
-        console.log('\x1b[33m%s\x1b[0m',"Available Balance: "+ Accountdetails.balance);  
+        console.log("Withdrawal of "+amountwithdrawing+" is Successfull!")
+        console.log("Available Balance: "+ Accountdetails.balance);  
         MainMenuOptions();
    }  
 }

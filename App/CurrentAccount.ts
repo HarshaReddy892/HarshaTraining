@@ -7,8 +7,8 @@ export class CurrentAccount extends Account{
     constructor()
     {
         super();
-        this.minimumBalance=1000;
-        this.balance=800;
+        this.minimumBalance=500;
+        this.balance=500;
         this.accountType=Accountype.Current;
         this.accountNumber='Curr'+Math.floor(Math.random() * (99999999 - 10000000 + 1)) + 10000000;
     }

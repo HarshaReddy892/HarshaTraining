@@ -10,7 +10,7 @@ var EmailIDG = "";
 var back = false;
 WelcomNote();
 function WelcomNote() {
-    console.log('\x1b[33m%s\x1b[0m', "Dear Customer, Welcome to Our Bank!");
+    console.log('\x1b[33m%s\x1b[0m', "...........Dear Customer, Welcome to Our Bank!.............");
     console.log('\x1b[33m%s\x1b[0m', "Below are the services providing at our desk!");
     MainMenuOptions();
 }
