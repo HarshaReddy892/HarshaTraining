@@ -1,0 +1,87 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "junglebook",
+      "author": "mark",
+      "pages": 190,
+      "availability": 5
+    },
+    {
+      "id": 2,
+      "name": "pirates",
+      "author": "jack",
+      "pages": 160,
+      "availability": 5
+    },
+    {
+      "id": 3,
+      "name": "as u like it",
+      "author": "shakespear",
+      "pages": 100,
+      "availability": 5
+    },
+    {
+      "id": 5,
+      "name": "ramayana",
+      "author": "valmiki",
+      "pages": 120,
+      "availability": 5
+    },
+    {
+      "name": "Chitra",
+      "author": "R.N Tagore",
+      "pages": "180",
+      "availability": "5",
+      "id": 6
+    },
+    {
+      "name": "A passage to India",
+      "author": " E.M.Forster",
+      "pages": "130",
+      "availability": "10",
+      "id": 7
+    },
+    {
+      "name": "Time Machine",
+      "author": "H.G. Wells",
+      "pages": "180",
+      "availability": "7",
+      "id": 8
+    },
+    {
+      "name": "Mein Kampf",
+      "author": "Adolf Hitler",
+      "pages": "190",
+      "availability": "9",
+      "id": 9
+    }
+  ],
+  "returnedBooks": [
+    {
+      "id": 1,
+      "name": "junglebook",
+      "author": "mark",
+      "pages": 190,
+      "availability": 5
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "userName": "harsha",
+      "password": "harsha",
+      "name": "harsha",
+      "phoneNumber": "256227272",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "userName": "vardhan",
+      "password": "vardhan",
+      "name": "vardhan",
+      "phoneNumber": "2626272727",
+      "role": "user"
+    }
+  ]
+}

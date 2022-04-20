@@ -1,0 +1,49 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade">
+
+    </div>
+
+    <div class="button-row">
+        <a mat-flat-button color="primary" [routerLink]="['/list']"><mat-icon>list</mat-icon></a>
+
+    </div>
+
+    <mat-card class="example-card">
+        <form [formGroup]="bookForm" (ngSubmit)="onFormSubmit(bookForm.value)">
+            <mat-form-field>
+                <input matInput placeholder="Enter book Name" formControlName="name">
+                <!-- [errorStateMatcher]="matcher"> -->
+                <mat-error>
+                    <span *ngIf="!bookForm.get('name')?.valid && bookForm.get('name')?.touched">Name Required</span>
+                </mat-error>
+            </mat-form-field>
+
+          
+            <mat-form-field>
+                <input matInput placeholder="Enter author Name" formControlName="author">
+                <!-- [errorStateMatcher]="matcher"> -->
+                <mat-error>
+                    <span *ngIf="!bookForm.get('author')?.valid && bookForm.get('author')?.touched">author Required</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Enter number of pages" formControlName="pages">
+                <!-- [errorStateMatcher]="matcher"> -->
+                <mat-error>
+                    <span *ngIf="!bookForm.get('pages')?.valid && bookForm.get('designation')?.touched">pages Required</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Enter no of books availability" formControlName="availability">
+               
+                <mat-error>
+                    <span *ngIf="!bookForm.get('availability')?.valid && bookForm.get('availability')?.touched"> availability Required</span>
+                </mat-error>
+            </mat-form-field>
+            <div class="button-row">
+                <button mat-flat-button color="primary" type="submit" [disabled]="!bookForm.valid"><mat-icon>save</mat-icon></button>
+            </div>
+        </form>
+    </mat-card>
+    </div>

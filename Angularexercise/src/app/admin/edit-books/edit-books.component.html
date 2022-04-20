@@ -1,0 +1,29 @@
+<form [formGroup]='reactiveFormBook' (ngSubmit)="onSubmit(reactiveFormBook.value)" >
+    <mat-card-header>
+        <mat-card-title>Edit Book Data</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+            <div fxLayout="column" fxLayoutAlign="space-between stretch">
+                <mat-form-field appearance="fill">
+                    <mat-label >Book Name</mat-label>
+                    <input matInput type="text" formControlName="name">
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Author</mat-label>
+                    <input matInput type="text" formControlName="author">
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label >pages</mat-label>
+                    <input matInput type="text" formControlName="pages">
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Availability</mat-label>
+                    <input matInput type="text"  formControlName="availability">
+                  </mat-form-field>
+            </div>
+    </mat-card-content>
+    <mat-card-actions >
+        <button type="submit" mat-raised-button color="primary">Submit</button>
+    </mat-card-actions>
+
+   

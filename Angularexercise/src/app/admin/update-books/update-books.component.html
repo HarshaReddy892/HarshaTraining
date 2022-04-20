@@ -1,0 +1,21 @@
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade">
+
+    </div>
+
+    <div class="button-row">
+        <a mat-flat-button color="primary" [routerLink]="['/list']"><mat-icon>list</mat-icon></a>
+
+    </div>
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title><h3>{{book.name}}</h3></mat-card-title>
+            <mat-card-title><h3>{{book.author}}</h3></mat-card-title>
+            <mat-card-title><h3>{{book.pages}}</h3></mat-card-title>
+            <mat-card-title><h3>{{book.availability}}</h3></mat-card-title>
+        </mat-card-header>
+        <mat-card-actions>
+            <a mat-flat-button color="primary" (click)="delete(book.id)"><mat-icon>delete</mat-icon></a>
+        </mat-card-actions>
+    </mat-card>
+    </div>
